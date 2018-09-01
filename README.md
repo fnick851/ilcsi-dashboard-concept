@@ -1,2 +1,3 @@
-# ilcsi-dashboard-concept
-Concept dashboard for ILCSI
+# ILCSI dashboard page concept
+
+ILCSI stands for Illinois Center for School Improvements.

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>ILCSI</title>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+
+<body>
+
+
+  <section class="control-area container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1 class="page-title">Illinois CSI <span>Summary</span></h1>
+        <ul class="controls-right">
+          <li class="indicator-descriptions">
+            <a href="#">Indicator Descriptions</a>
+            </il>
+          <li class="export-snapshot">
+            <a href="#">Export Snapshot</a>
+            </il>
+        </ul>
+      </div>
+    </div><!-- /.row -->
+    <div class="row">
+      <div class="filters col-sm-4">
+        <div class="filter-area dropdown">
+          <button class="btn btn-default btn-block dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="true">
+            Filter Area
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="Filter Area">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </div><!-- /.area-filter -->
+        <p>
+          <ul class="priority-focus-filters list-inline">
+            <li><a class="priority-filter" href="#" role="button">Priority Districts</a></li>
+            <li><a class="focus-filter" href="#" role="button">Focus Districts</a></li>
+          </ul>
+        </p>
+        <div class="filter-district dropdown">
+          <button class="btn btn-default btn-block dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="true" disabled>
+            Filter District
+            <span class="caret"></span>
+          </button>
+          <p>
+            <ul class="dropdown-menu" aria-labelledby="Filter Area">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+            </ul>
+          </p>
+        </div><!-- /.area-filter -->
+        <p class="filter-breadcrumbs">
+          <button class="btn btn-default">
+            CLEAR ALL
+          </button>
+        </p>
+      </div><!-- /.filters -->
+      <div class="tickers col-sm-8">
+        <div class="ticker-networks col-xs-6 col-sm-3">
+          <p><span>11</span> District Networks</p>
+        </div>
+        <div class="ticker-priority col-xs-6 col-sm-3">
+          <p><span>2</span> Priority Districts</p>
+        </div>
+        <div class="ticker-focus col-xs-6 col-sm-3">
+          <p><span>7</span> Focus Districts</p>
+        </div>
+        <div class="ticker-schools col-xs-6 col-sm-3">
+          <p><span>9</span> Schools</p>
+        </div>
+      </div><!-- /.tickers -->
+    </div><!-- /.row -->
+  </section><!-- /.container -->
+
+  <section class="chart-row container">
+    <hr>
+    <div class="row">
+      <div class="col-md-8">
+        <h2>EFFECTIVE LEADERSHIP TEAMS</h2>
+      </div>
+      <div class="col-md-4">
+        <ul class="key list-inline pull-right">
+          <li>Level 1</li>
+          <li>Level 2</li>
+          <li>Level 3</li>
+          <li>Level 4</li>
+        </ul>
+      </div>
+    </div><!-- /.row -->
+    <div class="row">
+      <div class="text-center col-sm-4">
+
+        <div id="chart1">
+          <!-- Carousel ================================================== -->
+          <div id="myCarousel" class="carousel slide" style="display: none">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+              <li data-target="#myCarousel" data-slide-to="3"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+              <div class="item active" id="chartArea1"></div>
+              <div class="item" id="chartArea2"></div>
+              <div class="item" id="chartArea3"></div>
+              <div class="item" id="chartArea4"></div>
+            </div>
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+          <!-- /.carousel -->
+        </div><!-- /.chart -->
+
+      </div>
+      <div class="text-center col-sm-4">
+        <div id="chart2">
+          <!-- Carousel ================================================== -->
+          <div id="myCarousel" class="carousel slide" style="display: none">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+              <li data-target="#myCarousel" data-slide-to="3"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+              <div class="item active" id="chartArea1"></div>
+              <div class="item" id="chartArea2"></div>
+              <div class="item" id="chartArea3"></div>
+              <div class="item" id="chartArea4"></div>
+            </div>
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+          <!-- /.carousel -->
+        </div><!-- /.chart -->
+      </div>
+      <div class="text-center col-sm-4">
+        <div id="chart3">
+          <!-- Carousel ================================================== -->
+          <div id="myCarousel" class="carousel slide" style="display: none">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+              <li data-target="#myCarousel" data-slide-to="3"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+              <div class="item active" id="chartArea1"></div>
+              <div class="item" id="chartArea2"></div>
+              <div class="item" id="chartArea3"></div>
+              <div class="item" id="chartArea4"></div>
+            </div>
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+          <!-- /.carousel -->
+        </div><!-- /.chart -->
+      </div>
+    </div><!-- /.row -->
+  </section>
+
+  <section class="chart-row container">
+    <hr>
+    <h2>INTENTIONAL DATA SYSTEMS</h2>
+    <div class="row">
+      <div class="text-center col-sm-4">
+        <div id="chart4">
+          <!-- Carousel ================================================== -->
+          <div id="myCarousel" class="carousel slide" style="display: none">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+              <li data-target="#myCarousel" data-slide-to="3"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+              <div class="item active" id="chartArea1"></div>
+              <div class="item" id="chartArea2"></div>
+              <div class="item" id="chartArea3"></div>
+              <div class="item" id="chartArea4"></div>
+            </div>
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+          <!-- /.carousel -->
+        </div><!-- /.chart -->
+      </div>
+      <div class="text-center col-sm-4">
+        <div id="chart5">
+          <!-- Carousel ================================================== -->
+          <div id="myCarousel" class="carousel slide" style="display: none">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+              <li data-target="#myCarousel" data-slide-to="3"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+              <div class="item active" id="chartArea1"></div>
+              <div class="item" id="chartArea2"></div>
+              <div class="item" id="chartArea3"></div>
+              <div class="item" id="chartArea4"></div>
+            </div>
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+          <!-- /.carousel -->
+        </div><!-- /.chart -->
+      </div>
+      <div class="text-center col-sm-4">
+        <div id="chart6">
+          <!-- Carousel ================================================== -->
+          <div id="myCarousel" class="carousel slide" style="display: none">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+              <li data-target="#myCarousel" data-slide-to="3"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+              <div class="item active" id="chartArea1"></div>
+              <div class="item" id="chartArea2"></div>
+              <div class="item" id="chartArea3"></div>
+              <div class="item" id="chartArea4"></div>
+            </div>
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+          <!-- /.carousel -->
+        </div><!-- /.chart -->
+      </div>
+    </div><!-- /.row -->
+  </section>
+
+  <section class="chart-row container">
+    <hr>
+    <h2>CONTINUOUS IMPROVEMENT PROCESS</h2>
+    <div class="row">
+      <div class="text-center col-sm-4">
+        <div id="chart7">
+          <!-- Carousel ================================================== -->
+          <div id="myCarousel" class="carousel slide" style="display: none">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+              <li data-target="#myCarousel" data-slide-to="3"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+              <div class="item active" id="chartArea1"></div>
+              <div class="item" id="chartArea2"></div>
+              <div class="item" id="chartArea3"></div>
+              <div class="item" id="chartArea4"></div>
+            </div>
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+          <!-- /.carousel -->
+        </div><!-- /.chart -->
+      </div>
+      <div class="text-center col-sm-4">
+        <div id="chart8">
+          <!-- Carousel ================================================== -->
+          <div id="myCarousel" class="carousel slide" style="display: none">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+              <li data-target="#myCarousel" data-slide-to="3"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+              <div class="item active" id="chartArea1"></div>
+              <div class="item" id="chartArea2"></div>
+              <div class="item" id="chartArea3"></div>
+              <div class="item" id="chartArea4"></div>
+            </div>
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+          <!-- /.carousel -->
+        </div><!-- /.chart -->
+      </div>
+      <div class="text-center col-sm-4">
+        <div id="chart9">
+          <!-- Carousel ================================================== -->
+          <div id="myCarousel" class="carousel slide" style="display: none">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+              <li data-target="#myCarousel" data-slide-to="3"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+              <div class="item active" id="chartArea1"></div>
+              <div class="item" id="chartArea2"></div>
+              <div class="item" id="chartArea3"></div>
+              <div class="item" id="chartArea4"></div>
+            </div>
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+          <!-- /.carousel -->
+        </div><!-- /.chart -->
+      </div>
+    </div><!-- /.row -->
+  </section>
+
+  <section class="chart-row container">
+    <hr>
+    <h2>AREA COMPARISONS</h2>
+    <table class="area-comparisons table">
+      <thead>
+        <tr>
+          <th class="col1">Areas</th>
+          <th colspan="2">Effective Leadership Teams</th>
+          <th colspan="2">Intentional Data Systems</th>
+          <th colspan="2">Continous Improvement Systems</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="row1">
+          <td class="col1"></td>
+          <td>Previous</td>
+          <td>Current</td>
+          <td>Previous</td>
+          <td>Current</td>
+          <td>Previous</td>
+          <td>Current</td>
+        </tr>
+        <tr>
+          <td class="col1">Area 1</td>
+          <td class="level1">52</td>
+          <td class="level3">27</td>
+          <td class="level4">20</td>
+          <td class="level1">89</td>
+          <td class="level4">36</td>
+          <td class="level1">63</td>
+        </tr>
+        <tr>
+          <td class="col1">Area 2</td>
+          <td class="level2">49</td>
+          <td class="level3">18</td>
+          <td class="level3">20</td>
+          <td class="level4">89</td>
+          <td class="level3">36</td>
+          <td class="level3">63</td>
+        </tr>
+        <tr>
+          <td class="col1">Area 3</td>
+          <td class="level4">27</td>
+          <td class="level3">49</td>
+          <td class="level1">89</td>
+          <td class="level4">63</td>
+          <td class="level2">20</td>
+          <td class="level1">52</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+
+  <script type="text/javascript" src="js/triangles.js"></script>
+  <script type="text/javascript" src="js/donut.js"></script>
+  <script type="text/javascript" src="js/toggle.js"></script>
+  </head>
+</body>
+
+</html>

@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+
+//Colors
+$dark-teal: #536973;
+$darkest-blue: #003e5a;
+$dark-blue: #1e7798;
+$blue: #35a7d2;
+$light-blue: #9fd8ee;
+$lightest-blue: #e9f4f9;
+$black: #000;
+$orange: #ff661b;
+$lato: 'Lato', sans-serif;
+
+* {
+  font-family: $lato;
+}
+
+//Global hover mixin
+.hover-style {
+  color: $dark-blue;
+  text-decoration: none;
+}
+
+a:hover {
+  @extend .hover-style;
+}
+
+h1.page-title {
+  color: $darkest-blue;
+  float: left;
+  span {
+    font-weight: 300;
+    &:before {
+      color: $blue;
+      content: "|";
+      padding-left: 10px;
+      padding-right: 15px;
+    }
+  }
+}
+
+.controls-right {
+  float: right;
+  margin: 20px 0 15px 0;
+  list-style: none;
+  li {
+    padding-bottom: 5px;
+  }
+  .indicator-descriptions {
+
+  }
+  .export-snapshot {
+
+  }
+  a {
+    color: $black;
+    &:hover {
+      @extend .hover-style;
+    }
+  }
+}
+
+.dropdown button {
+  color: $darkest-blue;
+  border-radius: 0px !important;
+  border: 1px solid $blue;
+  text-align: left;
+  .caret {
+    color: $blue;
+    position: relative;
+    top:4px;
+    float: right;
+    border-top: 12px dashed;
+    border-right: 7px solid transparent;
+    border-left: 7px solid transparent;
+  }
+}
+.dropdown-menu {
+  border-radius: 0px !important;
+}
+
+.filter-area {
+  margin-bottom: 25px;
+}
+.priority-focus-filters {
+  li {
+    padding-left: 25px;
+  }
+}
+.priority-filter {
+  color: $black;
+}
+.focus-filter {
+  color: $black;
+}
+.filter-district {
+  margin-bottom: 15px;
+}
+
+.tickers {
+  p {
+    text-align: center;
+    color: white;
+    background-color: $orange;
+    border-radius: 100%;
+    line-height: 15px;
+    padding-top: 25px;
+    width: 125px;
+    height: 125px;
+    margin: auto;
+    margin-bottom: 20px;
+    span {
+      line-height: 45px;
+      font-size: 45px;
+      display: block;
+      margin-bottom: 0px;
+    }
+  }
+}
+
+.chart-row {
+  padding-top: 5px;
+  padding-bottom: 35px;
+  hr {
+    border-top: 1px solid #c3c3c3;
+    margin-bottom: 5px;
+  }
+  h2 {
+    font-size: 22px;
+    margin-top: 5px;
+    margin-bottom: 25px;
+  }
+  ul.key li {
+    position: relative;
+    top: -5px;
+    &:before {
+      content: " ";
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      margin-right: 5px;
+      position: relative;
+      top: 8px;
+    }
+    &:nth-child(1):before {
+      background-color: $light-blue;
+    }
+    &:nth-child(2):before {
+      background-color: $blue;
+    }
+    &:nth-child(3):before {
+      background-color: $dark-blue;
+    }
+    &:nth-child(4):before {
+      background-color: $darkest-blue;
+    }
+  }
+}
+
+.title-wrapper {
+  border-top: 1px solid gray;
+  padding-top: 5px;
+}
+
+table.area-comparisons {
+  border: none;
+  tr th, td {
+    border: 5px solid white;
+    text-align: center;
+  }
+  th {
+    background-color: $lightest-blue;
+    color: $dark-teal;
+    font-weight: 700;
+    &:first-child {
+      border-left: none;
+    }
+    &:last-child {
+      border-right: none;
+    }
+  }
+  .row1 {
+    color: $dark-teal;
+  }
+  .col1 {
+    text-align: left;
+  }
+  td.col1 {
+    border-bottom: 1px solid #eeeeee;
+    color: #666c6e;
+  }
+  .level1 {
+    color: $darkest-blue;
+    background-color: $light-blue;
+  }
+  .level2 {
+    color: $darkest-blue;
+    background-color: $blue;
+  }
+  .level3 {
+    color: white;
+    background-color: $dark-blue;
+  }
+  .level4 {
+    color: white;
+    background-color: $darkest-blue;
+  }
+}
+
+//Charts
+#chart {
+	width: 300px;
+	height: 300px;
+  margin: auto;
+}
+
+#myCarousel {
+	width: 300px;
+	height: 300px;
+}
+
+.carousel-control {
+	width: 10px;
+	text-shadow: none;
+	color: grey;
+}
+
+.carousel-control.left, .carousel-control.right {
+	background-image: none;
+}
+
+.carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right {
+    font-size: 10px;
+}
+
+rect {
+	fill: #e9f4f9;
+}
+
+.arc text {
+  text-anchor: middle;
+}
+
+.arc path {
+  stroke: #fff;
+}
+
+.closeTriangle {
+	z-index: 999;
+	cursor: pointer;
+}
+
+#closeText {
+	pointer-events: none;
+}

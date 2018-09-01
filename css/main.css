@@ -1,0 +1,181 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
+* {
+  font-family: "Lato", sans-serif; }
+
+.hover-style, a:hover, .controls-right a:hover {
+  color: #1e7798;
+  text-decoration: none; }
+
+h1.page-title {
+  color: #003e5a;
+  float: left; }
+  h1.page-title span {
+    font-weight: 300; }
+    h1.page-title span:before {
+      color: #35a7d2;
+      content: "|";
+      padding-left: 10px;
+      padding-right: 15px; }
+
+.controls-right {
+  float: right;
+  margin: 20px 0 15px 0;
+  list-style: none; }
+  .controls-right li {
+    padding-bottom: 5px; }
+  .controls-right a {
+    color: #000; }
+
+.dropdown button {
+  color: #003e5a;
+  border-radius: 0px !important;
+  border: 1px solid #35a7d2;
+  text-align: left; }
+  .dropdown button .caret {
+    color: #35a7d2;
+    position: relative;
+    top: 4px;
+    float: right;
+    border-top: 12px dashed;
+    border-right: 7px solid transparent;
+    border-left: 7px solid transparent; }
+
+.dropdown-menu {
+  border-radius: 0px !important; }
+
+.filter-area {
+  margin-bottom: 25px; }
+
+.priority-focus-filters li {
+  padding-left: 25px; }
+
+.priority-filter {
+  color: #000; }
+
+.focus-filter {
+  color: #000; }
+
+.filter-district {
+  margin-bottom: 15px; }
+
+.tickers p {
+  text-align: center;
+  color: white;
+  background-color: #ff661b;
+  border-radius: 100%;
+  line-height: 15px;
+  padding-top: 25px;
+  width: 125px;
+  height: 125px;
+  margin: auto;
+  margin-bottom: 20px; }
+  .tickers p span {
+    line-height: 45px;
+    font-size: 45px;
+    display: block;
+    margin-bottom: 0px; }
+
+.chart-row {
+  padding-top: 5px;
+  padding-bottom: 35px; }
+  .chart-row hr {
+    border-top: 1px solid #c3c3c3;
+    margin-bottom: 5px; }
+  .chart-row h2 {
+    font-size: 22px;
+    margin-top: 5px;
+    margin-bottom: 25px; }
+  .chart-row ul.key li {
+    position: relative;
+    top: -5px; }
+    .chart-row ul.key li:before {
+      content: " ";
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      margin-right: 5px;
+      position: relative;
+      top: 8px; }
+    .chart-row ul.key li:nth-child(1):before {
+      background-color: #9fd8ee; }
+    .chart-row ul.key li:nth-child(2):before {
+      background-color: #35a7d2; }
+    .chart-row ul.key li:nth-child(3):before {
+      background-color: #1e7798; }
+    .chart-row ul.key li:nth-child(4):before {
+      background-color: #003e5a; }
+
+.title-wrapper {
+  border-top: 1px solid gray;
+  padding-top: 5px; }
+
+table.area-comparisons {
+  border: none; }
+  table.area-comparisons tr th, table.area-comparisons td {
+    border: 5px solid white;
+    text-align: center; }
+  table.area-comparisons th {
+    background-color: #e9f4f9;
+    color: #536973;
+    font-weight: 700; }
+    table.area-comparisons th:first-child {
+      border-left: none; }
+    table.area-comparisons th:last-child {
+      border-right: none; }
+  table.area-comparisons .row1 {
+    color: #536973; }
+  table.area-comparisons .col1 {
+    text-align: left; }
+  table.area-comparisons td.col1 {
+    border-bottom: 1px solid #eeeeee;
+    color: #666c6e; }
+  table.area-comparisons .level1 {
+    color: #003e5a;
+    background-color: #9fd8ee; }
+  table.area-comparisons .level2 {
+    color: #003e5a;
+    background-color: #35a7d2; }
+  table.area-comparisons .level3 {
+    color: white;
+    background-color: #1e7798; }
+  table.area-comparisons .level4 {
+    color: white;
+    background-color: #003e5a; }
+
+#chart {
+  width: 300px;
+  height: 300px;
+  margin: auto; }
+
+#myCarousel {
+  width: 300px;
+  height: 300px; }
+
+.carousel-control {
+  width: 10px;
+  text-shadow: none;
+  color: grey; }
+
+.carousel-control.left, .carousel-control.right {
+  background-image: none; }
+
+.carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right {
+  font-size: 10px; }
+
+rect {
+  fill: #e9f4f9; }
+
+.arc text {
+  text-anchor: middle; }
+
+.arc path {
+  stroke: #fff; }
+
+.closeTriangle {
+  z-index: 999;
+  cursor: pointer; }
+
+#closeText {
+  pointer-events: none; }
+
+/*# sourceMappingURL=main.css.map */
